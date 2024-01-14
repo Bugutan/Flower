@@ -20,33 +20,33 @@ function setup(){
   canvas = createCanvas(700, 700, WEBGL);
   canvas.class("canvas");
 
-  colorMode(HSB, 360, 100, 100);
+  colorMode(HSB, 317, 86, 69);
   angleMode(DEGREES);
   noStroke();
 
   petalNum = createDiv();
   petalNum.class("valueDisplay");
-  pNumSlider = createSlider(1, 20, 5, 1);
+  pNumSlider = createSlider(1, 20, 10, 1);
   pNumSlider.class("Slider");
 
   diameter = createDiv();
   diameter.class("valueDisplay");
-  diameterSlider = createSlider(20, 250, 200, 10);
+  diameterSlider = createSlider(20, 250, 170, 10);
   diameterSlider.class("Slider");
 
   pLength = createDiv();
   pLength.class("valueDisplay");
-  pLenSlider = createSlider(0, 300, 60, 10);
+  pLenSlider = createSlider(0, 300, 80, 10);
   pLenSlider.class("Slider");
 
   pSharpness = createDiv();
   pSharpness.class("valueDisplay");
-  pSharpSlider = createSlider(0.0, 10.0, 0.4, 0.1);
+  pSharpSlider = createSlider(0.0, 10.0, 0.9, 0.1);
   pSharpSlider.class("Slider");
 
   flowerHeight = createDiv();
   flowerHeight.class("valueDisplay");
-  heightSlider = createSlider(0, 600, 300, 10);
+  heightSlider = createSlider(0, 600, 210, 10);
   heightSlider.class("Slider");
 
   curvature1 = createDiv();
@@ -66,7 +66,7 @@ function setup(){
 
   bumpNum = createDiv();
   bumpNum.class("valueDisplay");
-  bumpNumSlider = createSlider(0, 20, 10, 1);
+  bumpNumSlider = createSlider(0, 20, 8, 1);
   bumpNumSlider.class("Slider");
 }
 
@@ -123,17 +123,17 @@ function draw(){
     }
   }
 
-  petalNum.html("Number of the petals: " + pNumSlider.value());
-  diameter.html("Diameter: " + diameterSlider.value());
-  pLength.html("Petal length: " + pLenSlider.value());
-  pSharpness.html("Petal sharpness: " + pSharpSlider.value());
+  petalNum.html("Yaprak Sayısı: " + pNumSlider.value());
+  diameter.html("Çicek Çapı: " + diameterSlider.value());
+  pLength.html("Yaprak Uzunluğu: " + pLenSlider.value());
+  pSharpness.html("Yaprak Ucu: " + pSharpSlider.value());
 
-  flowerHeight.html("Flower height: " + heightSlider.value());
-  curvature1.html("Curvature 1: " + curvatureSlider1.value());
-  curvature2.html("Curvature 2: " + curvatureSlider2.value());
+  flowerHeight.html("Çicek Uzunluğu: " + heightSlider.value());
+  curvature1.html("Kıvrım 1: " + curvatureSlider1.value());
+  curvature2.html("Kıvrım 2: " + curvatureSlider2.value());
 
-  bump.html("Bumpiness: " + bumpSlider.value());
-  bumpNum.html("Bumpiness number: " + bumpNumSlider.value());
+  bump.html("Yumru A: " + bumpSlider.value());
+  bumpNum.html("Yumru Sayısı: " + bumpNumSlider.value());
 
   v = [];
 }
