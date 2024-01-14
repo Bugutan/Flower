@@ -12,6 +12,10 @@ let flowerHeight, curvature1, curvature2;
 let bumpSlider, bumpNumSlider;
 let bump, bumpNum;
 
+
+let flowerColorSlider1, flowerColorSlider2 ,flowerColorSlider3;
+let flowerColor1, flowerColor2, flowerColor3; 
+
 let pNum, fD, pLen, pSharp;
 let fHeight, curve1, curve2;
 let b, bNum;
@@ -68,6 +72,23 @@ function setup(){
   bumpNum.class("valueDisplay");
   bumpNumSlider = createSlider(0, 20, 8, 1);
   bumpNumSlider.class("Slider");
+  
+  flowerColor1 = createDiv();
+  flowerColor1.class("valueDisplay");
+  flowerColorSlider1 = createSlider(0, 360, 317, 1);
+  flowerColorSlider1.class("Slider");
+  
+    
+  flowerColor2 = createDiv();
+  flowerColor2.class("valueDisplay");
+  flowerColorSlider2 = createSlider(0, 200, 86, 1);
+  flowerColorSlider2.class("Slider");
+  
+    
+  flowerColor3 = createDiv();
+  flowerColor3.class("valueDisplay");
+  flowerColorSlider3 = createSlider(0, 100, 69, 1);
+  flowerColorSlider3.class("Slider");
 }
 
 function draw(){
@@ -87,7 +108,13 @@ function draw(){
 
   b = bumpSlider.value();
   bNum = bumpNumSlider.value();
-
+	
+  color1 = flowerColorSlider1.value();
+  color2 = flowerColorSlider2.value();
+  color3 = flowerColorSlider3.value();
+	
+  //fill(flowerColor1, flowerColor2, flowerColor3);//  colorMode(HSB, 317, 86, 69);
+  
   for(theta = 0; theta < rows; theta += 1){
     v.push([]);
     for(let phi = 0; phi < cols; phi += 1){
@@ -103,7 +130,7 @@ function draw(){
   }
 
   for(let theta = 0; theta < v.length; theta++){
-    fill(340, 100-theta, 100);
+    fill(color1, 100-theta*color2*0.01, color3);
     for(let phi = 0; phi < v[theta].length; phi++){
       if(theta < v.length-1 && phi < v[theta].length-1){
         beginShape();
@@ -134,6 +161,9 @@ function draw(){
 
   bump.html("Yumru A: " + bumpSlider.value());
   bumpNum.html("Yumru Sayısı: " + bumpNumSlider.value());
+  flowerColor1.html("Renk1:" + flowerColorSlider1.value())
+  flowerColor2.html("Renk2:" + flowerColorSlider2.value())
+  flowerColor3.html("Renk3:" + flowerColorSlider3.value())
 
   v = [];
 }
